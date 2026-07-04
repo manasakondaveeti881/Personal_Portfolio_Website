@@ -27,6 +27,12 @@ app.get("/projects", (req, res) => {
     });
 
 });
+app.get("/test-db", (req, res) => {
+    db.query("SELECT DATABASE() AS db", (err, result) => {
+        if (err) return res.json(err);
+        res.json(result);
+    });
+});
 
 // Save contact message
 app.post("/contact", (req, res) => {
