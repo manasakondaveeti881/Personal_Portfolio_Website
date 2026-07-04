@@ -1,10 +1,11 @@
 const mysql = require("mysql2");
 
 const connection = mysql.createConnection({
-    host: "localhost",
+    host: "hayabusa.proxy.rlwy.net",
     user: "root",
-    password: "root",
-    database: "portfolio_db"
+    password: "lsjbTBDPkutJUvJRrPnnCLlfJVqfgIbb",
+    database: "railway",
+    port: 57566
 });
 
 connection.connect((err) => {
@@ -12,7 +13,7 @@ connection.connect((err) => {
         console.log("Database connection failed");
         console.log(err);
     } else {
-        console.log("Connected to MySQL Database");
+        console.log("Connected to Railway MySQL");
     }
 });
 
