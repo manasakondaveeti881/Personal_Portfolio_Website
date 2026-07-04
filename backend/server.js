@@ -28,7 +28,7 @@ app.get("/projects", (req, res) => {
 
 });
 app.get("/test-db", (req, res) => {
-    db.query("SELECT DATABASE() AS db", (err, result) => {
+    db.query("SHOW CREATE TABLE contacts", (err, result) => {
         if (err) return res.json(err);
         res.json(result);
     });
