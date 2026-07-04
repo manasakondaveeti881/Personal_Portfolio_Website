@@ -39,7 +39,7 @@ app.post("/contact", (req, res) => {
 
         if (err) {
             console.log(err);
-            return res.status(500).send("Database Error");
+            return res.status(500).json(err);
         }
 
         res.send("Message sent successfully!");
