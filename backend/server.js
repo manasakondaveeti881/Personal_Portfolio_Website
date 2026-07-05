@@ -28,12 +28,24 @@ app.get("/projects", (req, res) => {
 
 });
 app.get("/test-db", (req, res) => {
-    db.query("SHOW CREATE TABLE contacts", (err, result) => {
-        if (err) {
-            return res.json(err);
-        }
-        res.json(result);
+
+    db.query("SELECT DATABASE() AS db", (err, dbResult) => {
+
+        if (err) return res.json(err);
+
+        db.query("SHOW CREATE TABLE contacts", (err2, tableResult) => {
+
+            if (err2) return res.json(err2);
+
+            res.json({
+                database: dbResult,
+                table: tableResult
+            });
+
+        });
+
     });
+
 });
 
 // Save contact message

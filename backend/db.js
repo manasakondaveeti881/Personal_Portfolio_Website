@@ -3,7 +3,7 @@ const mysql = require("mysql2");
 const connection = mysql.createConnection({
     host: "hayabusa.proxy.rlwy.net",
     user: "root",
-    password: "lsjbTBDPkutJUvJRrPnnCLlfJVqfgIbb",
+    password: "bEONIZzCpgdiJrnuxwdWShypyoHYZviq",
     database: "railway",
     port: 57566
 });
